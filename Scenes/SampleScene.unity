@@ -828,7 +828,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _prefabMonet: {fileID: 4410480567058227585, guid: ad80e2b22a1417d439ae90b46e1587ed,
     type: 3}
-  _points: []
 --- !u!1 &1015724980
 GameObject:
   m_ObjectHideFlags: 0
@@ -868,6 +867,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1037131023}
+  - component: {fileID: 1037131026}
   - component: {fileID: 1037131024}
   - component: {fileID: 1037131022}
   - component: {fileID: 1037131021}
@@ -1029,6 +1029,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1037131026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1037131019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dcd33c2aa6017e4ba8aa95fa1300ac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1329488115
 GameObject:
   m_ObjectHideFlags: 0

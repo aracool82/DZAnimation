@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
@@ -8,13 +6,14 @@ public class Coin : MonoBehaviour
  
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Die();
+        DestroyCoin();
     }
 
-    private void Die()
+    private void DestroyCoin()
     {
-        Destroy(this.gameObject);
+        Destroy(gameObject);
     }
+
     public int GetCoinValue()
     {
         return _coinValue;

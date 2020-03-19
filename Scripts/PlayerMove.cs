@@ -7,7 +7,8 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private float _speed = 4f;
     [SerializeField] private float _endPointLeft = -8.5f;
     [SerializeField] private float _endPointRight = 8.5f;
-    [SerializeField] private int _money = 0;
+    private float _stepBack= 0.1f;
+
     private void Start()
     {
         _sprite = GetComponent<SpriteRenderer>();
@@ -25,9 +26,9 @@ public class PlayerMove : MonoBehaviour
         else if (Input.GetKey(KeyCode.LeftArrow))
         {
             _sprite.flipX = true;
-            Move( -_speed);
+            Move(-_speed);
         }
-        else 
+        else
         {
             _animator.SetBool("isWolk", false);
         }
@@ -36,17 +37,11 @@ public class PlayerMove : MonoBehaviour
     private void Move(float speed)
     {
         if (transform.position.x <= _endPointLeft)
-            transform.position =new Vector3(_endPointLeft + 0.1f,transform.position.y, transform.position.z);
-         else if(transform.position.x >= _endPointRight)
-             transform.position = new Vector3(_endPointRight - 0.1f, transform.position.y, transform.position.z);
+            transform.position = new Vector3(_endPointLeft + _stepBack, transform.position.y, transform.position.z);
+        else if (transform.position.x >= _endPointRight)
+            transform.position = new Vector3(_endPointRight - _stepBack, transform.position.y, transform.position.z);
+
         _animator.SetBool("isWolk", true);
         transform.Translate(speed * Time.deltaTime, 0, 0);
-    }
-
-
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        _money += collision.GetComponent<Coin>().GetCoinValue();
     }
 }
